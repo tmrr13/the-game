@@ -1,9 +1,13 @@
 import React from "react";
+import classNames from "classnames";
 
-export function Square(props) {
-  return (
-    <button className="square" onClick={props.onClick}>
-      {props.value}
-    </button>
-  );
+export class Square extends React.Component {
+  render() {
+    const { className, onClick, children } = this.props;
+    return (
+      <button className={classNames("square", className )} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
 }
