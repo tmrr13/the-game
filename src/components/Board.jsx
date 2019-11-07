@@ -138,6 +138,18 @@ export class Board extends React.Component {
   //   }
   // };
 
+   addText = () => {
+    const root = document.getElementById("root");
+    const box = document.createElement('div');
+
+    box.style.overflowY = 'scroll';
+    box.style.width = '220px';
+    box.style.height = '300px';
+    root.append(box);
+    const width = box.offsetWidth - box.clientWidth;
+    console.log(width)
+  };
+
   render() {
     // let arrNumbers = [1,2,3,4,5,6,7,8,9,3,22,33,66,65];
     return (
@@ -213,3 +225,21 @@ export class Board extends React.Component {
   //   }
   // };
 
+// Размеры и прокрутка элементов
+// scrollBottom = elem.scrollHeight - elem.scrollTop - elem.clientHeight;
+
+ // addText = () => {
+ //    const root = document.getElementById("root");
+ //    const box = document.createElement('div');
+ //
+ //    box.style.overflowY = 'scroll';
+ //    box.style.width = '220px';
+ //    box.style.height = '300px';
+ //    root.append(box)
+ //    const width = box.offsetWidth - box.clientWidth;
+ //
+ //  };
+
+// Поместите мяч в центр поля
+// ball.style.left = Math.round(field.clientWidth / 2 - ball.offsetWidth / 2) + 'px'
+// ball.style.top = Math.round(field.clientHeight / 2 - ball.offsetHeight / 2) + 'px'
