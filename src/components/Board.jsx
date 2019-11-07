@@ -78,41 +78,63 @@ export class Board extends React.Component {
   //   for (let i = 0; i < arrNumbers.length; i++) {
   //     if(arrNumbers[i] % 5 === 0) {
   //       numbers5.push(arrNumbers[i]);
-  //     } else if() {
+  //     } else if(arrNumbers[i] % 4 !== 0 && arrNumbers[i] % 3 !== 0) {
   //       otherNumbers.push(arrNumbers[i])
-  //       console.log(arrNumbers[i])
   //     }
   //     if(arrNumbers[i] % 4 === 0) {
   //       numbers4.push(arrNumbers[i]);
-  //       console.log(numbers4)
-  //     } else {
+  //     } else if (arrNumbers[i] % 5 !== 0 && arrNumbers[i] % 3 !== 0) {
   //       otherNumbers.push(arrNumbers[i])
-  //       console.log(otherNumbers)
   //     }
   //     if(arrNumbers[i] % 3 === 0) {
   //       numbers3.push(arrNumbers[i]);
-  //       console.log(numbers3)
-  //     } else {
+  //     } else if(arrNumbers[i] % 5 !== 0 && arrNumbers[i] % 4 !== 0) {
   //       otherNumbers.push(arrNumbers[i])
-  //       console.log(otherNumbers)
   //     }
-  //   }
+  //   }      console.log(numbers3)
   // };
 
   // evenNumbers = () => {
   //   const arrNumbers = [1,1,0,45,45,77,377,888,677,-9,-10000,24,98,55,52,51,39,-39,34,78,10000];
   //   const arrResult = [];
-  //   const group = arrNumbers.map(function (item, index) {
-  //     return [item + arrNumbers[index+1]]
-  //   });
-  //   const sum = group.slice(0, -1);
-  //   for(let i = 0; i < sum.length; i++) {
-  //     if(sum[i] % 2 === 0 && sum[i] % 4 !== 0) {
-  //       arrResult.push(sum[i])
+  //   // .lenght
+  //   for(let i = 0; i < arrNumbers.length; i++) {
+  //     let sum = arrNumbers[i] + arrNumbers[i + 1];
+  //     if(Number.isNaN(sum) && sum % 2 === 0 && sum % 4 !== 0) {
+  //       arrResult.push(sum);
   //     }
   //   }
-  //    console.log(arrResult) ;
+  //   console.log(arrResult)
+  //   // const group = arrNumbers.map(function (item, index) {
+  //   //   return [item + arrNumbers[index+1]]
+  //   // });
+  //   // const sum = group.slice(0, -1);
+  //   // for(let i = 0; i < sum.length; i++) {
+  //   //   if(sum[i] % 2 === 0 && sum[i] % 4 !== 0) {
+  //   //     arrResult.push(sum[i])
+  //   //   }
+  //   // }
   // };
+
+  // notification = (top, right, html, className) => {
+  //   const root = document.getElementById("root");
+  //   const notification = document.createElement('div');
+  //   notification.classList.add("notification");
+  //
+  //   notification.style.top = top + "px"
+  //   notification.style.top = right + "px"
+  //   notification.textContent = html
+  //   root.append(notification)
+  //   document.body.append(notification)
+  //   setTimeout(() => notification.remove(), 1500)
+  //   // showNotification({
+  //   //   top: 10, // 10px от верхней границы окна (по умолчанию 0px)
+  //   //   right: 10, // 10px от правого края окна (по умолчанию 0px)
+  //   //   html: "Hello!", // HTML-уведомление
+  //   //   className: "welcome" // дополнительный класс для div (необязательно)
+  //   // });
+  // };
+
 
   // clear = (elem) => {
   //   elem.innerHTML = ""
@@ -138,23 +160,23 @@ export class Board extends React.Component {
   //   }
   // };
 
-   addText = () => {
-    const root = document.getElementById("root");
-    const box = document.createElement('div');
-
-    box.style.overflowY = 'scroll';
-    box.style.width = '220px';
-    box.style.height = '300px';
-    root.append(box);
-    const width = box.offsetWidth - box.clientWidth;
-    console.log(width)
-  };
+  //  addText = () => {
+  //   const root = document.getElementById("root");
+  //   const box = document.createElement('div');
+  //
+  //   box.style.overflowY = 'scroll';
+  //   box.style.width = '220px';
+  //   box.style.height = '300px';
+  //   root.append(box);
+  //   const width = box.offsetWidth - box.clientWidth;
+  //   console.log(width)
+  // };
 
   render() {
     // let arrNumbers = [1,2,3,4,5,6,7,8,9,3,22,33,66,65];
     return (
       <div>
-        <div>{this.addText()}</div>
+        <div>{this.notification()}</div>
         <div></div>
       </div>
     );
@@ -243,3 +265,6 @@ export class Board extends React.Component {
 // Поместите мяч в центр поля
 // ball.style.left = Math.round(field.clientWidth / 2 - ball.offsetWidth / 2) + 'px'
 // ball.style.top = Math.round(field.clientHeight / 2 - ball.offsetHeight / 2) + 'px'
+
+
+
