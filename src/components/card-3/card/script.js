@@ -26,6 +26,8 @@ let scoreGame = 0;
 let selectedCard = null;
 let cards = [];
 let storageCardsCounter = 0;
+let test;
+let testOneCard = false;
 
 function generateCards(nominals, suits, numberOfCards) {
   let i = numberOfCards;
@@ -82,7 +84,10 @@ function cardClick(e) {
 
     if (selectedCardIndex !== indexCard) {
       const selectedSuitCard = resultDrawOfCards[selectedCardIndex];
-      target.setAttribute('src', deck[suitCard]);
+      testOneCard = true;
+      setTimeout(() => {
+        target.setAttribute('src', deck[suitCard]);
+      }, 0);
       let testCard = selectedCard;
 
       if (selectedSuitCard !== suitCard) {
@@ -105,11 +110,12 @@ function cardClick(e) {
       if (storageCards.length === 2) {
         storageCards = [];
       }
-      setTimeout(closeCards.bind(null, target, testCard), 500);
+      setTimeout(closeCards.bind(null, target, testCard), 1000);
     }
+  } else {
     selectedCard = target;
     target.setAttribute('src', deck[suitCard]);
-    setTimeout(closeCard.bind(null, target),1000);
+    setTimeout(closeCard.bind(null, target), 1000);
   }
 }
 
@@ -118,7 +124,12 @@ function closeCards(cardA, cardB) {
   cardB.setAttribute('src', shirt);
 }
 
-function closeCard(card, index) {
+function closeCard(card) {
+  if (testOneCard || card === selectedCard) {
+    testOneCard = false;
+    return;
+  }
+  selectedCard = null;
   card.setAttribute('src', shirt);
 }
 
@@ -198,7 +209,7 @@ function onLoad() {
   userRegistrationNameID = document.getElementById('user-registration-name');
   modalTitleID = document.getElementById('modal-title');
 
-  distributionOfCards = generateCards(nominalCards, suitCards, 2);
+  distributionOfCards = generateCards(nominalCards, suitCards, 9);
   resultDrawOfCards = shuffle(distributionOfCards);
 
   gameCards(resultDrawOfCards);
