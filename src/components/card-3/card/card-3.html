@@ -1,0 +1,68 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <title>Game</title>
+  <script src="script.js"></script>
+  <script src="collection-cards.js"></script>
+  <link rel="stylesheet" type="text/css" href="reset.css">
+  <link rel="stylesheet" type="text/css" href="main.css">
+  <meta charset="utf-8">
+</head>
+
+<body>
+<header class="header">
+  <div>
+    <span id="user-name" class="userName">User Name</span>
+    <span id="scoreboard-game" class="gameScore">0</span>
+  </div>
+<!--  <div>-->
+<!--    <span class="playTimeText">Время</span>-->
+<!--    <span class="playTime" id="timer">0</span>-->
+<!--  </div>-->
+</header>
+<div id="playing-table" class="plaingTable"></div>
+
+<!--<div id="restart_modal" class="modal noActive">-->
+<!--  -->
+
+<!--</div>-->
+<div id="game-banner" class="banner active">
+  <div id="game-modal" class="modal active">
+    <div class="modalHeader">
+      <h2 id="modal-title" class="modalTitle">Remember card</h2>
+<!--      <button id="btn-modal-close" class="btn btnModalClose">&#10008;</button>-->
+    </div>
+    <div class="modalBody">
+      <div class="registrationField">
+        <div class="formRow">
+          <div class="controlField" id="control-form">
+            <label placeholder="User Name" id="user-registration-name">User Name</label>
+            <input id="user-registration-field" type="text" name="login" class="userRegistrationField">
+            <div class="btnGroup">
+              <button id="btn-edit-user" class="btn btnEditUser">&#9998;</button>
+              <button id="btn-save-user" class="btn btnSaveUser">&#10004;</button>
+            </div>
+          </div>
+        </div>
+        <div class="formRow">
+          <label>
+            Minutes
+          </label>
+          <select id="difficulty-selection" class="gameDifficultySelection">
+            <option value="1" selected>1 minutes</option>
+            <option value="2">2 minutes</option>
+            <option value="3">3 minutes</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="modalFooter">
+      <button id="btn-start-game" class="btn btnStart">Start</button>
+      <button id="btn-restart" class="btn btnRestart noActive">Restart Game</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

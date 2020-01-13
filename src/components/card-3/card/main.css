@@ -1,0 +1,179 @@
+html,
+body {
+  height: 100%;
+  position: relative;
+}
+
+body {
+  background: green;
+}
+
+.header {
+  align-items: center;
+  background: #4a76a8;
+  display: flex;
+  padding: 0 20px;
+  height: 40px;
+}
+
+.plaingTable {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+img {
+  border-radius: 15px;
+  border: 1px solid transparent;
+  height: 300px;
+  margin: 4px;
+  width: 200px;
+}
+
+.btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0 5px;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btnSaveUser,
+.btnEditUser {
+  font-size: 20px;
+}
+
+.btnModalClose {
+  font-size: 30px;
+  position: absolute;
+  right: 5px;
+  top: 5px;
+  cursor: pointer;
+}
+
+.btnStart,
+.btnRestart {
+  border: 1px solid #059bca;
+  font-size: 15px;
+  padding: 0 10px;
+  line-height: 30px;
+  min-width: 100px;
+}
+
+.discardedCards {
+  opacity: 0;
+  transition: opacity 0.5s linear;
+}
+
+.banner {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.banner:before {
+  background: gray;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .3;
+  z-index: 10;
+
+}
+
+.modal {
+  background: white;
+  border-radius: 10px;
+  display: none;
+  left: 50%;
+  position: fixed;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 525px;
+  z-index: 15;
+}
+
+.modalTitle {
+  font-size: 25px;
+  color: gray;
+}
+
+.modalText {
+  font-size: 25px;
+}
+
+.modalHeader,
+.modalBody,
+.modalFooter {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modalFooter {
+  justify-content: flex-end;
+}
+
+.userName,
+.gameScore,
+.playTimeText,
+.playTime {
+  color: white;
+  font-size: 25px;
+  margin-right: 10px;
+}
+
+.formRow {
+  align-items: center;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.formRow:last-child {
+  margin-bottom: 0;
+}
+
+label {
+  color: #514d6a;
+  display: inline-block;
+  font-size: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 200px;
+}
+
+.userRegistrationField {
+  padding: 0 5px;
+  height: 25px;
+  border: 1px solid #dfe4ed;
+  font-size: 15px;
+}
+
+.gameDifficultySelection {
+  height: 25px;
+  border: 1px solid #dfe4ed;
+  font-size: 15px;
+}
+
+.controlField {
+  display: flex;
+}
+
+
+.active {
+  display: block;
+}
+
+.noActive {
+  display: none;
+}
+
