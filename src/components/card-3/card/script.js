@@ -197,12 +197,9 @@ function onLoad() {
   userRegistrationFieldID = document.getElementById('user-registration-field');
   userRegistrationNameID = document.getElementById('user-registration-name');
   modalTitleID = document.getElementById('modal-title');
-
   distributionOfCards = generateCards(nominalCards, suitCards, 2);
   resultDrawOfCards = shuffle(distributionOfCards);
-
   gameCards(resultDrawOfCards);
-
   playingTableID.addEventListener('click', cardClick);
   btnSaveUserID.addEventListener('click', saveUserName);
   btnEditUserID.addEventListener('click', editUserName);
