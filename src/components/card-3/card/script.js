@@ -141,17 +141,12 @@ function editUserName() {
   userRegistrationNameID.innerHTML = 'User Name';
 }
 
-// function closeModal() {
-//   open(location, '_self').close();
-// }
-
 function startGame() {
   durationGame = difficultySelectionFieldID.value * 60000;
   userNameID.innerHTML = userRegistrationNameID.innerHTML;
   gameBannerID.classList.remove('active');
   startGameModalID.classList.remove('active');
   timerGame = setTimeout(restartGameModal.bind(null, restartUnsuccessfulGame()), durationGame);
-  // printNumbers(0, durationGame * 60);
 }
 
 function restartGameModal(fun) {
@@ -168,7 +163,6 @@ function restartUnsuccessfulGame() {
   btnRestartID.classList.remove('noActive');
   btnRestartID.classList.add('active');
   modalTitleID.innerHTML = 'Время Закончилось';
-  // printNumbers(0, durationGame * 60);
 }
 
 function restartSuccessfulGame() {
@@ -176,32 +170,12 @@ function restartSuccessfulGame() {
   modalTitleID.innerHTML = `${'Игра закончена. Ваш счет ' + scoreGame}`;
 }
 
-// function printNumbers(from, to) {
-//   let current = from;
-//
-//   function go() {
-//     timerID.innerHTML = current;
-//     if (current === to || cards.length === storageCardsCounter) {
-//       clearInterval(timerSetInterval);
-//     }
-//     current++;
-//   }
-//
-//   go();
-//   timerSetInterval = setInterval(go, 1000);
-// }
-
-
 function restartGame() {
   gameBannerID.classList.remove('active');
   startGameModalID.classList.remove('active');
   playingTableID.innerHTML = '';
   clearTimeout(timerGame);
   timerGame = setTimeout(restartGameModal.bind(null, restartUnsuccessfulGame()), durationGame);
-
-  // printNumbers(0, durationGame * 60);
-  // setTimeout(restartGameModal.bind(null, restartUnsuccessfulGame()), durationGame);
-  // clearInterval(timerSetInterval);
 
   scoreboardGameID.innerHTML = 0;
   scoreGame = 0;
@@ -217,12 +191,10 @@ function restartGame() {
 
 function onLoad() {
   btnEditUserID = document.getElementById('btn-edit-user');
-  // btnModalCloseID = document.getElementById('btn-modal-close');
   btnRestartID = document.getElementById('btn-restart');
   btnSaveUserID = document.getElementById('btn-save-user');
   btnStartGameID = document.getElementById('btn-start-game');
   difficultySelectionFieldID = document.getElementById('difficulty-selection');
-  // gameDurationID = document.getElementById('game-duration');
   playingTableID = document.getElementById('playing-table');
   controlFormID = document.getElementById('control-form');
   scoreboardGameID = document.getElementById('scoreboard-game');
@@ -232,7 +204,6 @@ function onLoad() {
   userRegistrationFieldID = document.getElementById('user-registration-field');
   userRegistrationNameID = document.getElementById('user-registration-name');
   modalTitleID = document.getElementById('modal-title');
-  // timerID = document.getElementById('timer');
 
   distributionOfCards = generateCards(nominalCards, suitCards, 2);
   resultDrawOfCards = shuffle(distributionOfCards);
@@ -244,7 +215,6 @@ function onLoad() {
   btnEditUserID.addEventListener('click', editUserName);
   btnStartGameID.addEventListener('click', startGame);
   btnRestartID.addEventListener('click', restartGame);
-  // btnModalCloseID.addEventListener('click', closeModal);
 }
 
 
