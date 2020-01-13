@@ -68,10 +68,10 @@ function gameCards(resultDrawOfCards) {
 
 function cardClick(e) {
   const target = e.target;
-  const closeCard = target.classList.contains('discardedCards');
+  const selectedClosedCard = target.classList.contains('discardedCards');
   const indexCard = +target.dataset.index;
 
-  if (selectedCard === target || target.tagName !== 'IMG' || storageCards.length > 1 || closeCard) {
+  if (selectedCard === target || target.tagName !== 'IMG' || storageCards.length > 1 || selectedClosedCard) {
     return;
   }
   storageCards.push(target);
@@ -107,17 +107,19 @@ function cardClick(e) {
       }
       setTimeout(closeCards.bind(null, target, testCard), 500);
     }
-  } else {
     selectedCard = target;
-    setTimeout(()=> {
-      target.setAttribute('src', deck[suitCard]);
-    },0);
+    target.setAttribute('src', deck[suitCard]);
+    setTimeout(closeCard.bind(null, target),1000);
   }
 }
 
 function closeCards(cardA, cardB) {
   cardA.setAttribute('src', shirt);
   cardB.setAttribute('src', shirt);
+}
+
+function closeCard(card, index) {
+  card.setAttribute('src', shirt);
 }
 
 function saveUserName() {
