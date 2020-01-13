@@ -68,15 +68,13 @@ function gameCards(resultDrawOfCards) {
 
 function cardClick(e) {
   const target = e.target;
-  let closeCard = target.classList.contains('discardedCards');
+  const closeCard = target.classList.contains('discardedCards');
   const indexCard = +target.dataset.index;
 
   if (selectedCard === target || target.tagName !== 'IMG' || storageCards.length > 1 || closeCard) {
     return;
   }
-
   storageCards.push(target);
-
   const suitCard = resultDrawOfCards[indexCard];
 
   if (selectedCard) {
@@ -86,6 +84,7 @@ function cardClick(e) {
       const selectedSuitCard = resultDrawOfCards[selectedCardIndex];
       target.setAttribute('src', deck[suitCard]);
       let testCard = selectedCard;
+
       if (selectedSuitCard !== suitCard) {
         storageCards = [];
         scoreGame -= 1;
@@ -197,7 +196,7 @@ function onLoad() {
   userRegistrationNameID = document.getElementById('user-registration-name');
   modalTitleID = document.getElementById('modal-title');
 
-  distributionOfCards = generateCards(nominalCards, suitCards, 9);
+  distributionOfCards = generateCards(nominalCards, suitCards, 2);
   resultDrawOfCards = shuffle(distributionOfCards);
 
   gameCards(resultDrawOfCards);
