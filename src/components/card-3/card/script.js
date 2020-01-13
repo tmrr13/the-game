@@ -18,6 +18,7 @@ let controlFormID;
 let modalTitleID;
 
 let timerGame;
+let durationGame;
 let storageCards = [];
 let distributionOfCards = [];
 let resultDrawOfCards = [];
@@ -25,7 +26,6 @@ let scoreGame = 0;
 let selectedCard = null;
 let cards = [];
 let storageCardsCounter = 0;
-let durationGame;
 
 function generateCards(nominals, suits, numberOfCards) {
   let i = numberOfCards;
@@ -42,7 +42,7 @@ function generateCards(nominals, suits, numberOfCards) {
 }
 
 function shuffle(arr) {
-  const copyArr = [...arr];
+  const copyArr = arr.slice();
   const mergeArrays = [...copyArr, ...arr];
   let j, temp;
   for (let i = mergeArrays.length - 1; i > 0; i--) {
@@ -51,7 +51,6 @@ function shuffle(arr) {
     mergeArrays[j] = mergeArrays[i];
     mergeArrays[i] = temp;
   }
-
   return mergeArrays;
 }
 
@@ -66,11 +65,6 @@ function gameCards(resultDrawOfCards) {
   }
   playingTableID.append(result);
 }
-
-//todo
-// const CARD_CONSTANTS = {
-//   img: 'IMG', // занести другие строки в константы
-// };
 
 function cardClick(e) {
   const target = e.target;
@@ -116,7 +110,9 @@ function cardClick(e) {
     }
   } else {
     selectedCard = target;
-    target.setAttribute('src', deck[suitCard]);
+    setTimeout(()=> {
+      target.setAttribute('src', deck[suitCard]);
+    },0);
   }
 }
 
@@ -201,7 +197,7 @@ function onLoad() {
   userRegistrationNameID = document.getElementById('user-registration-name');
   modalTitleID = document.getElementById('modal-title');
 
-  distributionOfCards = generateCards(nominalCards, suitCards, 2);
+  distributionOfCards = generateCards(nominalCards, suitCards, 9);
   resultDrawOfCards = shuffle(distributionOfCards);
 
   gameCards(resultDrawOfCards);
@@ -212,7 +208,6 @@ function onLoad() {
   btnStartGameID.addEventListener('click', startGame);
   btnRestartID.addEventListener('click', restartGame);
 }
-
 
 document.addEventListener('DOMContentLoaded', onLoad);
 
