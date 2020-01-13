@@ -3,12 +3,10 @@ const shirt = 'deck/cat.jpg';
 const suitCards = ['H', 'S', 'C', 'D'];
 
 let btnEditUserID;
-// let btnModalCloseID;
 let btnRestartID;
 let btnSaveUserID;
 let btnStartGameID;
 let difficultySelectionFieldID;
-// let gameDurationID;
 let startGameModalID;
 let playingTableID;
 let scoreboardGameID;
@@ -18,8 +16,6 @@ let userRegistrationNameID;
 let gameBannerID;
 let controlFormID;
 let modalTitleID;
-// let timerID;
-// let timerSetInterval;
 
 let timerGame;
 let storageCards = [];
